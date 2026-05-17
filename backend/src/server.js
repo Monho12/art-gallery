@@ -1,19 +1,20 @@
 import express from "express";
-import notesRoutes from "./routes/notesRoutes.js";
+import cors from "cors";
 import { connectDB } from "./config/db.js";
 import dotenv from "dotenv";
 import rateLimiter from "./middleware/rateLimiter.js";
+import artRoutes from './routes/artRoutes.js'
 
 dotenv.config();
 
 const app = express();
 const PORT = process.nextTick.PORT || 5001
 
-
-
+app.use(cors());
 app.use(express.json())
 app.use(rateLimiter)
-app.use("/api/notes", notesRoutes);
+
+app.use(artRoutes);
 
 connectDB().then(() => {
     app.listen(PORT, () => {
