@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500&display=swap');
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.miniImg {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.03) saturate(0.88);
+  transition: filter 0.4s ease;
+}
+
+.card:hover .miniImg {
+  filter: contrast(1.06) saturate(0.75) brightness(0.93);
+}
+
+.card-info {
+  background: transparent;
+  width: 100%;
+  padding: 14px 0 0 0;
+  border-top: 1px solid #c8c8c8;
+}
+
+.date {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #b8966e;
+  font-style: normal;
+  margin: 0 0 6px 0;
+}
+
+.title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.3;
+  margin: 0;
+  list-style: none;
+  transition: color 0.2s ease;
+}
+
+.card:hover .title {
+  color: #4a4a4a;
+}

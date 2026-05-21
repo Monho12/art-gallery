@@ -5,10 +5,6 @@ const artSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    artist: {
-        type: String,
-        required: true
-    },
 
     year: {
         type: Number,
@@ -26,10 +22,7 @@ const artSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    location: {
-        type: String,
-        required: true
-    },
+
     dimensions: {
         type: String,
         required: true

@@ -1,0 +1,25 @@
+.addart-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+.addart-title {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.addart-sub {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 32px;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 500;
+  color: #9a9a9a;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 8px;
+}

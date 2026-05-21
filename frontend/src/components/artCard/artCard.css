@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500&display=swap");
+
+.art-card {
+  display: flex;
+  min-height: 540px;
+}
+
+.img {
+  width: 60%;
+  height: 100%;
+  min-height: 540px;
+  object-fit: cover;
+  filter: contrast(1.05) saturate(0.85);
+}
+
+.art-info {
+  display: flex;
+  flex-direction: column;
+  padding: 0 48px;
+  width: 40%;
+  color: #262626;
+}
+
+.art-info h5 {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #b8966e;
+  margin: 0 0 28px 0;
+}
+
+.art-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 54px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #262626;
+  margin: 0 0 24px 0;
+}
+
+.art-artist {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #262626;
+  margin: 0 0 32px 0;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #222;
+}
+
+.art-description {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: #262626;
+  margin: 0;
+  flex: 1;
+}
+
+.art-description {
+  margin: 0;
+}
+
+.art-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 12px;
+  border-top: 1px solid #d8d8d8;
+  padding-top: 20px;
+  margin-top: 28px;
+}
+
+.art-detail {
+  padding-right: 8px;
+}
+
+.detail-label {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #b8966e;
+  margin: 0 0 7px 0;
+}
+
+.detail-value {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: #262626;
+  line-height: 1.55;
+  margin: 0;
+  padding: 0;
+}
+
+.art-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 44px;
+}
+
+.art-buttons button {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 13px 32px;
+  border: 1px solid #333;
+  color: #262626;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.art-buttons button:hover {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.btn-delete {
+  border-color: #8b2020 !important;
+  color: #8b2020 !important;
+}
+
+.btn-delete:hover {
+  background: #8b2020 !important;
+  color: #fff !important;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.edit-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #b8966e;
+}
+
+.edit-input,
+.edit-textarea {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: #262626;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #d8d8d8;
+  padding: 6px 0;
+  outline: none;
+  width: 100%;
+}
+
+.edit-input:focus,
+.edit-textarea:focus {
+  border-bottom-color: #b8966e;
+}
+
+.edit-textarea {
+  resize: vertical;
+  min-height: 72px;
+}

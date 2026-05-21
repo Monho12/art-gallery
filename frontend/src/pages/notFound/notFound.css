@@ -1,0 +1,49 @@
+.notfound-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.notfound-code {
+  font-size: 120px;
+  color: #b8966e;
+  color: var(--accent);
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 900;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.notfound-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.notfound-sub {
+  font-size: 14px;
+  color: #999;
+  max-width: 360px;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.notfound-btn {
+  display: inline-block;
+  padding: 11px 26px;
+  background: #1a1a1a;
+  color: white;
+  text-decoration: none;
+  border-radius: 100px;
+  font-size: 14px;
+  transition: opacity 0.2s;
+}
+
+.notfound-btn:hover {
+  opacity: 0.85;
+}

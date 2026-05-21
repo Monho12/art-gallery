@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500&display=swap");
+
+.auth-page {
+  display: flex;
+  height: 100vh;
+}
+
+.auth-left {
+  flex: 1;
+  background: #0f0f0f;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 56px;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-left-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 150%;
+  object-fit: cover;
+  filter: contrast(1.04) saturate(0.6);
+  opacity: 0.45;
+}
+
+.auth-left-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 0.92) 0%,
+    rgba(10, 10, 10, 0.35) 55%,
+    transparent 100%
+  );
+}
+
+.auth-left-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.auth-left-label {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #b8966e;
+  margin: 0 0 16px 0;
+}
+
+.auth-left-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0 0 16px 0;
+  max-width: 380px;
+}
+
+.auth-left-sub {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 320px;
+}
+
+/* ── Right panel ──────────────────────────── */
+
+.auth-right {
+  flex: 0 0 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 64px 56px;
+}
+
+.auth-form-wrap {
+  width: 100%;
+  max-width: 340px;
+}
+
+.auth-form-label {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #b8966e;
+  margin: 0 0 12px 0;
+}
+
+.auth-form-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #1a1a1a;
+  margin: 0 0 40px 0;
+  line-height: 1;
+}
+
+/* ── Inputs ───────────────────────────────── */
+
+.auth-field {
+  margin-bottom: 28px;
+}
+
+.auth-field label {
+  display: block;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.auth-field input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #d8d8d8;
+  outline: none;
+  padding: 8px 0;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #1a1a1a;
+  background: transparent;
+  transition: border-color 0.25s ease;
+  box-sizing: border-box;
+}
+
+.auth-field input:focus {
+  border-color: #b8966e;
+}
+
+.auth-field input::placeholder {
+  color: #ccc;
+}
+
+/* ── Submit button ────────────────────────── */
+
+.auth-submit {
+  width: 100%;
+  margin-top: 12px;
+  padding: 14px 0;
+  background: #1a1a1a;
+  color: #fff;
+  border: 1px solid #1a1a1a;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.auth-submit:hover {
+  background: #b8966e;
+  border-color: #b8966e;
+}
+
+/* ── Footer link ──────────────────────────── */
+
+.auth-switch {
+  margin-top: 28px;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: #999;
+  text-align: center;
+}
+
+.auth-switch a {
+  color: #b8966e;
+  text-decoration: none;
+  border-bottom: 1px solid #b8966e;
+  padding-bottom: 1px;
+  transition: opacity 0.2s ease;
+}
+
+.auth-switch a:hover {
+  opacity: 0.7;
+}
+
+/* ── Responsive ───────────────────────────── */
+
+@media (max-width: 860px) {
+  .auth-page {
+    flex-direction: column;
+  }
+
+  .auth-left {
+    min-height: 260px;
+    flex: none;
+    padding: 36px 32px;
+  }
+
+  .auth-left-title {
+    font-size: 36px;
+  }
+
+  .auth-right {
+    flex: none;
+    padding: 48px 32px;
+  }
+}

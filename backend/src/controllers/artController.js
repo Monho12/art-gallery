@@ -1,5 +1,6 @@
 
 import Art from "../models/art.js"
+import { cloudinary } from "../config/cloudinary.js"
 
 export async function getAllArts(req, res) {
     try {
@@ -51,9 +52,21 @@ export async function updateArt(req, res) {
 
 export async function deleteArt(req, res) {
     try {
-        const deletedArt = await Art.findByIdAndDelete(req.params.id)
-        if (!deletedArt) return res.status(404).json({ message: "Not found" })
-        res.status(200).json(deletedArt)
+        const art = await Art.findById(req.params.id)
+        if (!art) return res.status(404).json({ message: "Not found" })
+
+        if (art.image) {
+            // Extract public_id from URL: .../upload/v123456/mern-art/filename.jpg → mern-art/filename
+            const afterUpload = art.image.split("/upload/")[1]
+            if (afterUpload) {
+                const withoutVersion = afterUpload.split("/").slice(1).join("/")
+                const publicId = withoutVersion.replace(/\.[^/.]+$/, "")
+                await cloudinary.uploader.destroy(publicId)
+            }
+        }
+
+        await art.deleteOne()
+        res.status(200).json(art)
     } catch (error) {
         console.log("error in deleteArt controller", error)
         res.status(500).json({ message: "Internal server error" })

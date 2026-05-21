@@ -1,0 +1,185 @@
+.addart-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+.artist-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  border: 0.5px solid #b8966e;
+  color: #b8966e;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  margin-bottom: 14px;
+}
+
+.addart-title {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.addart-sub {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 32px;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 500;
+  color: #9a9a9a;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 8px;
+}
+
+.upload-zone {
+  border: 1.5px dashed #c8c8c8;
+  border-radius: 12px;
+  padding: 50px 20px;
+  text-align: center;
+  cursor: pointer;
+  background: #fafafa;
+  margin-bottom: 24px;
+  transition: background 0.15s;
+}
+
+.upload-zone:hover {
+  background: #f0f0f0;
+}
+
+.upload-icon {
+  font-size: 36px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.upload-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.upload-sub {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 14px;
+}
+
+.upload-btn {
+  display: inline-block;
+  padding: 7px 18px;
+  border: 0.5px solid #c8c8c8;
+  border-radius: 8px;
+  font-size: 13px;
+  background: white;
+}
+
+.preview-wrap {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.preview-img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.preview-remove {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+hr {
+  border: none;
+  border-top: 0.5px solid #d8d8d8;
+  margin: 24px 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  background: white;
+  border: 0.5px solid #c8c8c8;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #b8966e;
+}
+
+.form-group textarea {
+  min-height: 90px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.char-count {
+  font-size: 11px;
+  color: #999;
+  text-align: right;
+  margin-top: 4px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.btn-submit {
+  flex: 2;
+  padding: 12px;
+  background: #b8966e;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-submit:hover {
+  opacity: 0.85;
+}
+
+.btn-submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

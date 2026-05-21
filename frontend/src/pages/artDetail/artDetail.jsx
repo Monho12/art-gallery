@@ -1,0 +1,45 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import "./artDetail.css";
+import ArtCard from "../../components/artCard/artCard";
+import { instance } from "../../client/instance";
+
+export default function ArtDetail() {
+  const { id } = useParams();
+  const [art, setArt] = useState(null);
+
+  useEffect(() => {
+    instance
+      .get(`/art/${id}`)
+      .then((res) => {
+        setArt(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [id]);
+
+  if (!art) {
+    return (
+      <main className="loadin-container">
+        <p>Loading artwork...</p>
+      </main>
+    );
+  }
+
+  return (
+    <main className="main-containerDetail">
+      <ArtCard
+        title={art.title}
+        artist={art.artist}
+        description={art.description}
+        image={art.image}
+        medium={art.medium}
+        dimensions={art.dimensions}
+        year={art.year}
+        genre={art.genre}
+        _id={art._id}
+      />
+    </main>
+  );
+}
