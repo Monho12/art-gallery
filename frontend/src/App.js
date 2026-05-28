@@ -10,6 +10,7 @@ import Login from './pages/login/login.jsx';
 import Signup from './pages/signup/signup.jsx';
 import NotFound from './pages/notFound/notFound.jsx';
 import Profile from './pages/profile/profile.jsx';
+import ArtistProfile from './pages/artistProfile/artistProfile.jsx';
 import { AuthProvider } from './context/AuthContext.jsx';
 
 function MainLayout() {
@@ -35,6 +36,7 @@ function App() {
             <Route path="/art/:id" element={<ArtDetail />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/artist/:userId" element={<ArtistProfile />} />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />

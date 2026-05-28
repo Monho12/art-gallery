@@ -57,6 +57,29 @@
   margin: 0;
 }
 
+.profile-hero-addArt {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 24px;
+  border: 1px solid var(--accent);
+  color: var(--dark);
+  background: transparent;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.profile-hero-addArt:hover {
+  background: var(--accent);
+  color: var(--white);
+  border: 1px solid var(--accent);
+}
+
 .profile-hero-logout {
   font-family: "Inter", system-ui, sans-serif;
   font-size: 10px;

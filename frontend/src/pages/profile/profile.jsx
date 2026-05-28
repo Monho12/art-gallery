@@ -1,33 +1,36 @@
-import { useEffect, useState } from "react"
-import { useAuth } from "../../context/AuthContext"
-import { instance } from "../../client/instance"
-import { useNavigate } from "react-router-dom"
-import MyWorks from "../../components/myWorks/myWorks"
-import SavedWorks from "../../components/savedWorks/savedWorks"
-import "./profile.css"
+import { useEffect, useState } from "react";
+import { useAuth } from "../../context/AuthContext";
+import { instance } from "../../client/instance";
+import { useNavigate, Link } from "react-router-dom";
+import MyWorks from "../../components/myWorks/myWorks";
+import SavedWorks from "../../components/savedWorks/savedWorks";
+import "./profile.css";
 
 export default function Profile() {
-  const { user, logout } = useAuth()
-  const navigate = useNavigate()
-  const [tab, setTab] = useState("works")
-  const [arts, setArts] = useState([])
-  const [loading, setLoading] = useState(true)
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+  const [tab, setTab] = useState("works");
+  const [arts, setArts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!user) { navigate("/login"); return }
+    if (!user) {
+      navigate("/login");
+      return;
+    }
     instance
       .get(`/arts/user/${user._id}`)
-      .then(res => setArts(res.data))
+      .then((res) => setArts(res.data))
       .catch(console.error)
-      .finally(() => setLoading(false))
-  }, [user, navigate])
+      .finally(() => setLoading(false));
+  }, [user, navigate]);
 
   function handleLogout() {
-    logout()
-    navigate("/")
+    logout();
+    navigate("/");
   }
 
-  if (!user) return null
+  if (!user) return null;
 
   return (
     <main className="profile-page">
@@ -42,6 +45,9 @@ export default function Profile() {
             {loading ? "—" : arts.length} artwork{arts.length !== 1 ? "s" : ""}
           </p>
         </div>
+        <Link to="/addart" className="profile-hero-addArt">
+          Add Art
+        </Link>
         <button className="profile-hero-logout" onClick={handleLogout}>
           Log out
         </button>
@@ -67,5 +73,5 @@ export default function Profile() {
       {tab === "works" && <MyWorks arts={arts} loading={loading} />}
       {tab === "saved" && <SavedWorks />}
     </main>
-  )
+  );
 }

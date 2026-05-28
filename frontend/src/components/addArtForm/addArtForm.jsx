@@ -20,6 +20,21 @@ export default function AddArtForm() {
   const fileRef = useRef(null);
   const navigate = useNavigate();
 
+  const STANDARD_DIMENSIONS = [
+    "20 × 20 cm",
+    "21 × 29.7 cm (A4)",
+    "29.7 × 42 cm (A3)",
+    "40 × 50 cm",
+    "42 × 59.4 cm (A2)",
+    "50 × 50 cm",
+    "50 × 70 cm",
+    "60 × 80 cm",
+    "60 × 90 cm",
+    "80 × 100 cm",
+    "100 × 120 cm",
+    "30 × 90 cm (Panoramic)",
+  ];
+
   function handleFile(e) {
     const file = e.target.files[0];
     if (!file) return;
@@ -77,6 +92,9 @@ export default function AddArtForm() {
 
   return (
     <main className="addart-page">
+      <button className="addart-back-btn" onClick={() => navigate(-1)}>
+        ← Back
+      </button>
       <h1 className="addart-title">Add artwork</h1>
       <p className="addart-sub">Share your latest piece with the community</p>
 
@@ -91,7 +109,6 @@ export default function AddArtForm() {
           <p className="upload-icon">+</p>
           <p className="upload-text">Drop your image here</p>
           <p className="upload-sub">PNG, JPG, WEBP — up to 20MB</p>
-          <span className="upload-btn">Browse files</span>
         </div>
       ) : (
         <div className="preview-wrap">
@@ -173,13 +190,18 @@ export default function AddArtForm() {
           </div>
           <div className="form-group">
             <label htmlFor="dimensions">Dimensions</label>
-            <input
+            <select
               id="dimensions"
-              type="text"
-              placeholder="e.g. 73 × 92 cm"
               value={dimensions}
               onChange={(e) => setDimensions(e.target.value)}
-            />
+            >
+              <option value="">Select dimensions</option>
+              {STANDARD_DIMENSIONS.map((d) => (
+                <option key={d} value={d}>
+                  {d}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
 

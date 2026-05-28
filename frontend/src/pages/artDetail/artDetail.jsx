@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./artDetail.css";
 import ArtCard from "../../components/artCard/artCard";
 import { instance } from "../../client/instance";
 
 export default function ArtDetail() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [art, setArt] = useState(null);
 
   useEffect(() => {
@@ -29,6 +30,7 @@ export default function ArtDetail() {
 
   return (
     <main className="main-containerDetail">
+      <button className="back-btn" onClick={() => navigate(-1)}>← Back</button>
       <ArtCard
         title={art.title}
         artist={art.artist}
