@@ -1,7 +1,40 @@
 :root {
-  --bg: #f5f1eb;
-  --bg-card: #ffffff;
+  /* Brand */
   --accent: #b8966e;
+
+  /* Darks */
+  --dark: #1a1a1a;
+  --dark-card: #262626;
+  --near-black: #0f0f0f;
+
+  /* Grays */
+  --artist-border: #222222;
+  --border-dark: #333333;
+  --text-hover: #4a4a4a;
+  --text-desc: #555555;
+  --text-muted: #797979;
+  --border-mid: #999999;
+  --placeholder: #aaaaaa;
+  --border-light: #c8c8c8;
+  --placeholder-form: #cccccc;
+  --divider: #d8d8d8;
+
+  /* Surfaces */
+  --bg: #f5f1eb;
+  --white: #ffffff;
+
+  /* Semantic */
+  --danger: #8b2020;
+
+  /* Overlays */
+  --overlay-dark-start: rgba(10, 10, 10, 0.82);
+  --overlay-dark-mid: rgba(10, 10, 10, 0.3);
+  --overlay-login-start: rgba(10, 10, 10, 0.92);
+  --overlay-login-mid: rgba(10, 10, 10, 0.35);
+  --dot-bg: rgba(255, 255, 255, 0.35);
+  --hero-artist: rgba(255, 255, 255, 0.65);
+  --hero-border: rgba(255, 255, 255, 0.55);
+  --hero-btn-hover: rgba(255, 255, 255, 0.12);
 }
 
 body {
@@ -23,4 +56,10 @@ code {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }

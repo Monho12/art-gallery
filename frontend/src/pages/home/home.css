@@ -11,3 +11,16 @@
   justify-content: center;
   align-items: center;
 }
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px 24px;
+}
+
+.profile-empty {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-muted);
+}

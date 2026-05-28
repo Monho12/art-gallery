@@ -10,24 +10,22 @@
 
 .notfound-code {
   font-size: 120px;
-  color: #b8966e;
   color: var(--accent);
   font-family: "Playfair Display", Georgia, serif;
   font-weight: 900;
-  color: var(--accent);
   text-decoration: none;
 }
 
 .notfound-title {
   font-size: 24px;
   font-weight: 500;
-  color: #1a1a1a;
+  color: var(--dark);
   margin-bottom: 8px;
 }
 
 .notfound-sub {
   font-size: 14px;
-  color: #999;
+  color: var(--border-mid);
   max-width: 360px;
   line-height: 1.6;
   margin-bottom: 28px;
@@ -36,8 +34,8 @@
 .notfound-btn {
   display: inline-block;
   padding: 11px 26px;
-  background: #1a1a1a;
-  color: white;
+  background: var(--dark);
+  color: var(--white);
   text-decoration: none;
   border-radius: 100px;
   font-size: 14px;

@@ -1,7 +1,38 @@
 import "./signup.css";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { instance } from "../../client/instance";
+import { useAuth } from "../../context/AuthContext";
+import toast from "react-hot-toast";
 
 export default function Signup() {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
+  const [loading, setLoading] = useState(false);
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    if (password !== confirm) {
+      toast.error("Passwords do not match");
+      return;
+    }
+    setLoading(true);
+    try {
+      const { data } = await instance.post("/register", { username, email, password });
+      login(data);
+      toast.success("Account created!");
+      navigate("/");
+    } catch (err) {
+      toast.error(err.response?.data?.message || "Something went wrong");
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
     <div className="auth-page">
       <div className="auth-left">
@@ -26,31 +57,55 @@ export default function Signup() {
           <p className="auth-form-label">New member</p>
           <h2 className="auth-form-title">Create Account</h2>
 
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="auth-field">
-              <label>Full Name</label>
-              <input type="text" placeholder="Your name" />
+              <label>Username</label>
+              <input
+                type="text"
+                placeholder="Your name"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+              />
             </div>
 
             <div className="auth-field">
               <label>Email</label>
-              <input type="email" placeholder="your@email.com" />
+              <input
+                type="email"
+                placeholder="your@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
             </div>
 
             <div className="auth-divider" />
 
             <div className="auth-field">
               <label>Password</label>
-              <input type="password" placeholder="••••••••" />
+              <input
+                type="password"
+                placeholder="••••••••"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
             </div>
 
             <div className="auth-field">
               <label>Confirm Password</label>
-              <input type="password" placeholder="••••••••" />
+              <input
+                type="password"
+                placeholder="••••••••"
+                value={confirm}
+                onChange={(e) => setConfirm(e.target.value)}
+                required
+              />
             </div>
 
-            <button type="submit" className="auth-submit">
-              Create Account
+            <button type="submit" className="auth-submit" disabled={loading}>
+              {loading ? "Creating account..." : "Create Account"}
             </button>
           </form>
 

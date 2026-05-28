@@ -1,44 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500&display=swap");
 
-:root {
-  /* ---- BRAND ---- */
-  --accent: #b8966e; /* gold/tan — logo, labels, accents */
-
-  /* ---- MAIN COLORS ---- */
-  --dark: #1a1a1a; /* most text, buttons, active tabs */
-  --dark-card: #262626; /* art card title, artist, description */
-  --white: #ffffff; /* hero text, login right side */
-  --near-black: #0f0f0f; /* login left panel background */
-
-  /* ---- GRAY SCALE ---- */
-  --border-dark: #333333; /* art card button border */
-  --text-hover: #4a4a4a; /* mini card hover title */
-  --text-desc: #555555; /* exhibition description */
-  --border-mid: #999999; /* header/footer border, dates */
-  --text-muted: #797979; /* gallery count, labels, inactive tabs */
-  --placeholder: #aaaaaa; /* search placeholder, clear button */
-  --border-light: #c8c8c8; /* search input, mini card, sort border */
-  --placeholder-form: #cccccc; /* form input placeholder */
-  --divider: #d8d8d8; /* art card, gallery, home borders */
-  --bg: #f5f1eb; /* page background */
-  --bg-card: #ffffff; /* card background */
-  --artist-border: #222222; /* artist name underline */
-
-  /* ---- SPECIAL ---- */
-  --bg-cream: #f5f1eb; /* exhibition section background */
-  --black: #000000; /* theme color */
-
-  /* ---- RGBA / TRANSPARENT ---- */
-  --overlay-dark-start: rgba(10, 10, 10, 0.82); /* hero gradient start */
-  --overlay-dark-mid: rgba(10, 10, 10, 0.3); /* hero gradient mid */
-  --overlay-login-start: rgba(10, 10, 10, 0.92); /* login left gradient start */
-  --overlay-login-mid: rgba(10, 10, 10, 0.35); /* login left gradient mid */
-  --dot-bg: rgba(255, 255, 255, 0.35); /* hero pagination dots */
-  --hero-artist: rgba(255, 255, 255, 0.65); /* hero artist name */
-  --hero-border: rgba(255, 255, 255, 0.55); /* hero button border */
-  --hero-btn-hover: rgba(255, 255, 255, 0.12); /* hero button hover bg */
-}
-
 .main-header {
   height: 72px;
   display: flex;
@@ -49,7 +10,6 @@
 }
 
 .logo {
-  color: var(--accent);
   font-family: "Playfair Display", Georgia, serif;
   font-weight: 900;
   font-size: 32px;
@@ -73,6 +33,7 @@
   color: var(--text-muted);
   position: relative;
 }
+
 .nav-links a:hover {
   color: var(--text-hover);
 }
@@ -84,19 +45,14 @@
   bottom: 2px;
   width: 100%;
   height: 1px;
-  background: black;
+  background: var(--dark);
   transform: scaleX(0);
-  transform-origin: left;
+  transform-origin: center;
   transition: transform 0.3s ease;
 }
 
 .nav-links a:hover::after {
   transform: scaleX(1);
-}
-
-.nav-links a::after {
-  transform: scaleX(0);
-  transform-origin: center;
 }
 
 .auth-links {
@@ -126,7 +82,7 @@
   height: 1px;
   background: var(--border-dark);
   transform: scaleX(0);
-  transform-origin: left;
+  transform-origin: center;
   transition: transform 0.3s ease;
 }
 
@@ -134,7 +90,28 @@
   transform: scaleX(1);
 }
 
-.auth-links a::after {
-  transform: scaleX(0);
-  transform-origin: center;
+.profile-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--white) !important;
+  border: none;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+  transition: opacity 0.2s ease;
+}
+
+.profile-avatar:hover {
+  opacity: 0.85;
+}
+
+.profile-avatar::after {
+  display: none !important;
 }

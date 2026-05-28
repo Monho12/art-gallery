@@ -3,13 +3,14 @@ import { useRef, useState } from "react";
 import { instance } from "../../client/instance";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 export default function AddArtForm() {
+  const { user } = useAuth();
   const [preview, setPreview] = useState(null);
   const [imageFile, setImageFile] = useState(null);
   const [desc, setDesc] = useState("");
   const [title, setTitle] = useState("");
-  const [artist, setArtist] = useState("");
   const [year, setYear] = useState("");
   const [medium, setMedium] = useState("");
   const [dimensions, setDimensions] = useState("");
@@ -17,7 +18,6 @@ export default function AddArtForm() {
   const [loading, setLoading] = useState(false);
 
   const fileRef = useRef(null);
-
   const navigate = useNavigate();
 
   function handleFile(e) {
@@ -58,7 +58,8 @@ export default function AddArtForm() {
         title,
         description: desc,
         image: imageUrl,
-        artist,
+        artist: user.username,
+        userId: user._id,
         year,
         medium,
         dimensions,
@@ -111,6 +112,11 @@ export default function AddArtForm() {
       <hr />
 
       <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label>Artist</label>
+          <input type="text" value={user?.username || ""} disabled />
+        </div>
+
         <div className="form-group">
           <label htmlFor="title">Title</label>
           <input

@@ -1,35 +1,42 @@
 import mongoose from "mongoose";
 
 const artSchema = new mongoose.Schema({
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: true,
+    },
+    artist: {
+        type: String,
+        required: true,
+    },
     title: {
         type: String,
-        required: true
+        required: true,
     },
-
     year: {
         type: Number,
-        required: true
+        required: true,
     },
     image: {
         type: String,
-        required: true
+        required: true,
     },
     medium: {
         type: String,
-        required: true
+        required: true,
     },
     genre: {
         type: String,
-        required: true
+        required: true,
     },
-
     dimensions: {
         type: String,
-        required: true
+        required: true,
     },
     description: {
         type: String,
-        required: true
+        required: true,
     },
 }, { timestamps: true })
 

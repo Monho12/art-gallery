@@ -39,6 +39,7 @@ export default function ArtDetail() {
         year={art.year}
         genre={art.genre}
         _id={art._id}
+        userId={art.userId}
       />
     </main>
   );

@@ -11,14 +11,14 @@
 
 .addart-sub {
   font-size: 14px;
-  color: #999;
+  color: var(--border-mid);
   margin-bottom: 32px;
 }
 
 .label {
   font-size: 11px;
   font-weight: 500;
-  color: #9a9a9a;
+  color: var(--border-mid);
   text-transform: uppercase;
   letter-spacing: 0.6px;
   margin-bottom: 8px;
