@@ -88,3 +88,28 @@
   font-weight: 300;
   color: var(--text-muted);
 }
+
+@media (max-width: 768px) {
+  .artist-page {
+    width: 100%;
+    padding: 40px 24px;
+  }
+
+  .artist-name {
+    font-size: 28px;
+  }
+
+  .artist-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .artist-page {
+    padding: 28px 16px;
+  }
+
+  .artist-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -58,6 +58,21 @@ export default function AddArtForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const missing = [];
+    if (!imageFile) missing.push("Image");
+    if (!title.trim()) missing.push("Title");
+    if (!year) missing.push("Year");
+    if (!genre) missing.push("Genre");
+    if (!medium.trim()) missing.push("Medium");
+    if (!dimensions) missing.push("Dimensions");
+    if (!desc.trim()) missing.push("Description");
+
+    if (missing.length > 0) {
+      toast.error(`Please fill in: ${missing.join(", ")}`);
+      return;
+    }
+
     const toastId = toast.loading("Creating artwork, please wait...");
     setLoading(true);
     try {

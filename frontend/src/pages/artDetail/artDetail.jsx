@@ -42,6 +42,7 @@ export default function ArtDetail() {
         genre={art.genre}
         _id={art._id}
         userId={art.userId}
+        spotlight={true}
       />
     </main>
   );

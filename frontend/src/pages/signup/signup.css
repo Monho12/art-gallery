@@ -198,3 +198,75 @@
 .auth-switch a:hover {
   opacity: 0.7;
 }
+
+@media (max-width: 860px) {
+  .auth-page {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .auth-left {
+    min-height: 220px;
+    flex: none;
+    padding: 36px 32px;
+    justify-content: flex-end;
+  }
+
+  .auth-left-title {
+    font-size: 36px;
+  }
+
+  .auth-left-sub {
+    display: none;
+  }
+
+  .auth-right {
+    flex: 1;
+    flex-basis: auto;
+    padding: 48px 40px;
+    align-items: flex-start;
+    padding-top: 52px;
+  }
+
+  .auth-form-wrap {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .auth-left {
+    min-height: 160px;
+    padding: 28px 24px;
+  }
+
+  .auth-left-title {
+    font-size: 28px;
+  }
+
+  .auth-right {
+    padding: 40px 24px;
+  }
+
+  .auth-field input {
+    font-size: 16px;
+  }
+
+  .auth-submit {
+    padding: 16px 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .auth-left {
+    min-height: 130px;
+    padding: 20px 20px;
+  }
+
+  .auth-right {
+    padding: 32px 20px;
+  }
+
+  .auth-form-title {
+    font-size: 28px;
+  }
+}

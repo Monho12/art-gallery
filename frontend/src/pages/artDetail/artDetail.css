@@ -34,3 +34,15 @@
 .back-btn:hover {
   color: var(--dark);
 }
+
+@media (max-width: 768px) {
+  .main-containerDetail {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-containerDetail {
+    padding: 24px 16px;
+  }
+}

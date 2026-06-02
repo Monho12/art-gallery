@@ -113,3 +113,46 @@
   background: var(--hero-btn-hover);
   border-color: var(--white);
 }
+
+@media (max-width: 768px) {
+  .hero {
+    height: 65vh;
+    min-height: 420px;
+  }
+
+  .hero-content {
+    bottom: 40px;
+    left: 32px;
+    right: 32px;
+  }
+
+  .hero-title {
+    font-size: 44px;
+  }
+
+  .hero-dots {
+    bottom: 20px;
+    right: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 55vh;
+    min-height: 360px;
+  }
+
+  .hero-content {
+    bottom: 32px;
+    left: 20px;
+    right: 20px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-artist {
+    font-size: 11px;
+  }
+}

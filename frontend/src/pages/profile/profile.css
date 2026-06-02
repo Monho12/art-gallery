@@ -150,3 +150,72 @@
   height: 1px;
   background: var(--dark);
 }
+
+.profile-hero-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .profile-page {
+    width: 100%;
+    padding: 36px 24px;
+  }
+
+  .profile-hero {
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .profile-hero-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .profile-hero-name {
+    font-size: 26px;
+  }
+
+  .profile-hero-actions {
+    width: 100%;
+    border-top: 1px solid var(--divider);
+    padding-top: 16px;
+  }
+
+  .profile-hero-addArt,
+  .profile-hero-logout {
+    flex: 1;
+    text-align: center;
+  }
+
+  .profile-divider {
+    margin: 28px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-page {
+    padding: 24px 16px;
+  }
+
+  .profile-hero-avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .profile-hero-name {
+    font-size: 22px;
+  }
+
+  .profile-tabs {
+    gap: 16px;
+  }
+
+  .profile-tab {
+    font-size: 10px;
+  }
+}

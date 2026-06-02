@@ -5,12 +5,75 @@
   min-height: 540px;
 }
 
-.img {
+.img-wrapper {
+  position: relative;
   width: 60%;
+  min-height: 540px;
+  flex-shrink: 0;
+}
+
+.img {
+  width: 100%;
   height: 100%;
   min-height: 540px;
   object-fit: cover;
   filter: contrast(1.05) saturate(0.85);
+  transition: transform 0.5s ease, filter 0.5s ease, box-shadow 0.5s ease;
+  position: relative;
+  z-index: 20;
+}
+
+.img-wrapper--spotlight {
+  cursor: zoom-in;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  box-shadow: 0 0 120px 20px rgba(0, 0, 0, 0.6);
+  animation: lightbox-in 0.35s ease;
+}
+
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 24px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.lightbox-close:hover {
+  color: #fff;
 }
 
 .art-info {
@@ -183,4 +246,38 @@
 .edit-textarea {
   resize: vertical;
   min-height: 72px;
+}
+
+@media (max-width: 768px) {
+  .art-card {
+    flex-direction: column;
+  }
+
+  .img-wrapper {
+    width: 100%;
+    min-height: 320px;
+  }
+
+  .img {
+    min-height: 320px;
+  }
+
+  .art-info {
+    width: 100%;
+    padding: 32px 0 0 0;
+  }
+
+  .art-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .art-title {
+    font-size: 28px;
+  }
+
+  .art-buttons {
+    flex-wrap: wrap;
+  }
 }

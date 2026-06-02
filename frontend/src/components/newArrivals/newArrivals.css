@@ -68,3 +68,20 @@ figure {
   color: var(--accent);
   border-color: var(--accent);
 }
+
+@media (max-width: 768px) {
+  .arrivals-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px 20px;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .arrivals-grid {
+    grid-template-columns: 1fr;
+  }
+}

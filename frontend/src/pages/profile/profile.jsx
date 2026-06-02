@@ -45,12 +45,14 @@ export default function Profile() {
             {loading ? "—" : arts.length} artwork{arts.length !== 1 ? "s" : ""}
           </p>
         </div>
-        <Link to="/addart" className="profile-hero-addArt">
-          Add Art
-        </Link>
-        <button className="profile-hero-logout" onClick={handleLogout}>
-          Log out
-        </button>
+        <div className="profile-hero-actions">
+          <Link to="/addart" className="profile-hero-addArt">
+            Add Art
+          </Link>
+          <button className="profile-hero-logout" onClick={handleLogout}>
+            Log out
+          </button>
+        </div>
       </div>
 
       <div className="profile-divider" />

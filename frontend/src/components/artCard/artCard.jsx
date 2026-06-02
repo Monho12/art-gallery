@@ -16,9 +16,11 @@ export default function ArtCard({
   year,
   genre,
   userId,
+  spotlight = false,
 }) {
   const navigate = useNavigate();
   const { user, toggleSaved } = useAuth();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   const isOwner = !!user && user._id === userId?.toString();
   const isSaved = user?.savedArts?.some((id) => id.toString() === _id);
@@ -81,7 +83,9 @@ export default function ArtCard({
   if (isEditing) {
     return (
       <article className="art-card" id={_id}>
-        <img src={image} alt={form.title} className="img" />
+        <div className="img-wrapper">
+          <img src={image} alt={form.title} className="img" />
+        </div>
         <div className="art-info">
           <h5>Edit Artwork</h5>
           <form className="edit-form" onSubmit={handleUpdate}>
@@ -144,7 +148,19 @@ export default function ArtCard({
 
   return (
     <article className="art-card" id={_id}>
-      <img src={image} alt={title} className="img" />
+      <div
+        className={`img-wrapper${spotlight ? " img-wrapper--spotlight" : ""}`}
+        onClick={() => spotlight && setLightboxOpen(true)}
+      >
+        <img src={image} alt={title} className="img" />
+      </div>
+
+      {spotlight && lightboxOpen && (
+        <div className="lightbox" onClick={() => setLightboxOpen(false)}>
+          <img src={image} alt={title} className="lightbox-img" onClick={(e) => e.stopPropagation()} />
+          <button className="lightbox-close" onClick={() => setLightboxOpen(false)}>✕</button>
+        </div>
+      )}
       <div className="art-info">
         <h5>Current Exhibition</h5>
         <h1 className="art-title">{title}</h1>

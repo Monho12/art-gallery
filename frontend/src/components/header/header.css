@@ -116,3 +116,38 @@
 .profile-avatar::after {
   display: none !important;
 }
+
+@media (max-width: 768px) {
+  .main-header {
+    padding: 0 24px;
+    flex-wrap: wrap;
+    height: auto;
+    gap: 12px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  .nav-links {
+    gap: 14px;
+    font-size: 13px;
+  }
+
+  .auth-links {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header {
+    padding: 12px 16px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .nav-links {
+    gap: 10px;
+    font-size: 12px;
+  }
+}
