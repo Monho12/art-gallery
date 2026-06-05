@@ -110,7 +110,7 @@ export default function Signup() {
           </form>
 
           <p className="auth-switch">
-            Already have an account? <Link to="/login">Sign in</Link>
+            Already have an account? <Link to="/login">Log in</Link>
           </p>
         </div>
       </div>
