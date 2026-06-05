@@ -1,7 +1,8 @@
 import axios from "axios"
 
 export const instance = axios.create({
-    baseURL: "http://localhost:5001",
+    baseURL: "https://art-be.vercel.app",
+    // baseURL: "http://localhost:5001",
 })
 
 instance.interceptors.request.use((config) => {
