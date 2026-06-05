@@ -49,7 +49,7 @@ export default function Login() {
       <div className="auth-right">
         <div className="auth-form-wrap">
           <p className="auth-form-label">Welcome back</p>
-          <h2 className="auth-form-title">Sign In</h2>
+          <h2 className="auth-form-title">Log In</h2>
 
           <form onSubmit={handleSubmit}>
             <div className="auth-field">
